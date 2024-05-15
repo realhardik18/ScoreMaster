@@ -1,10 +1,12 @@
 import './App.css'
+import Header from './Header'
+import Scorecard from './Scorecard'
 
 function App() {
   return (
     <>
-      <h1 className='text-4xl text-red-50'>hello</h1>
-      
+    <Header/>
+    <Scorecard/>
     </>
   )
 }
