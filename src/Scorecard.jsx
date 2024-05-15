@@ -1,22 +1,28 @@
 import { useState } from "react";
-import { hello } from "./scorecard.js"
 
-function Scorecard(){
-    const [score,runs]=useState(0);
-    const [balls,faced]=useState(0);
-    var decmial = balls%6
-    var overs= `${Math.floor(balls/6)}.${decmial}`
+function ScoreCard(){
+    const [score,setscore]=useState(0); 
+    const add=(runs)=>{
+        setscore(score+runs)
+    };
     return(
-        <div>
-            <h1>{score} off {overs}</h1>
-            <button className="btn btn-active btn-accent" onClick={hello}>say hi</button>
-            <button className="btn btn-active btn-accent" onClick={()=>{runs(score + 1); faced(balls+1)}}>single</button>
-            <button className="btn btn-active btn-accent" onClick={()=>{runs(score + 2); faced(balls+1)}}>double</button>
-            <button className="btn btn-active btn-accent" onClick={()=>{runs(score + 3); faced(balls+1)}}>triple</button>
-            <button className="btn btn-active btn-accent" onClick={()=>{runs(score + 4); faced(balls+1)}}>four</button>
-            <button className="btn btn-active btn-accent" onClick={()=>{runs(score + 6); faced(balls+1)}}>six</button>
+        <div className="text-center">
+            <p>Batsmen A :-{score}</p>
+        <div className="join">
+            <button className="join-item btn border-white" onClick={()=>add(1)}>WD</button>
+            <button className="join-item btn border-white" onClick={()=>add(1)}>1</button>
+            <button className="join-item btn border-white" onClick={()=>add(2)}>2</button>
+            <button className="join-item btn border-white" onClick={()=>add(4)}>3</button>            
+        </div><br />
+        <div className="join">
+            <button className="join-item btn border-white" onClick={()=>add(4)}>4</button>
+            <button className="join-item btn border-white" onClick={()=>add(6)}>6</button>
+            <button className="join-item btn border-white" onClick={()=>add(0)}>W</button>
+            <button className="join-item btn border-white" onClick={()=>add(0)}>NB</button>
+        </div>        
         </div>
+
     );
 }
 
-export default Scorecard
+export default ScoreCard

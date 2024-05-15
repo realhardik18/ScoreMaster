@@ -1,12 +1,14 @@
 import './App.css'
 import Header from './Header'
-import Scorecard from './Scorecard'
+import MainScore from './MainScore'
+import ScoreCard from './ScoreCard'
 
 function App() {
   return (
     <>
     <Header/>
-    <Scorecard/>
+    <MainScore/>
+    <ScoreCard/>
     </>
   )
 }
